@@ -19,6 +19,7 @@
     </properties>
 
     <dependencies>
+        <!--引入thymeleaf模板依赖包来进行前端html页面的开发，html页面上使用获取数据用thymeleaf模板语法-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
