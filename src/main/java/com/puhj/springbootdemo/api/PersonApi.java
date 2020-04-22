@@ -4,6 +4,7 @@ import com.puhj.springbootdemo.entity.Person;
 import com.puhj.springbootdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,11 @@ public class PersonApi {
     @GetMapping("/list")
     public List<Person> getAll() {
         return personService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Person get(@PathVariable("id") Integer id) {
+        return personService.get(id);
     }
 
     /**
