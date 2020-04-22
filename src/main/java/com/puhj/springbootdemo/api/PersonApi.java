@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController("personApi")
-@RequestMapping("/restfulapi")
+@RequestMapping("/person")
 public class PersonApi {
 
     @Autowired
     private PersonService personService;
 
-    @GetMapping("/persons")
+    @GetMapping("/list")
     public List<Person> getAll() {
         return personService.getAll();
     }
