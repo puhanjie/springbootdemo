@@ -4,3 +4,12 @@ spring:
     url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: root
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:com/puhj/springbootdemo/dao/*.xml
+  type-aliases-package: com.puhj.springbootdemo.entity
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
