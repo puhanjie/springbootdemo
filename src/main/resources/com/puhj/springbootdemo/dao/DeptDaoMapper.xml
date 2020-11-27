@@ -7,8 +7,8 @@
         <result property="deptName" column="deptName" javaType="String"/>
     </resultMap>
 
-    <insert id="insert" parameterType="Dept" useGeneratedKeys="true">
-        insert into Dept(deptNo, deptName) values(#{deptNo}, #{deptName})
+    <insert id="insert" parameterType="Dept" useGeneratedKeys="true" keyProperty="id">
+        insert into Dept(id, deptNo, deptName) values(#{id}, #{deptNo}, #{deptName})
     </insert>
 
     <delete id="delete" parameterType="Dept">
