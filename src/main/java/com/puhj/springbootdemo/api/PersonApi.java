@@ -3,10 +3,7 @@ package com.puhj.springbootdemo.api;
 import com.puhj.springbootdemo.entity.Person;
 import com.puhj.springbootdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,9 +24,22 @@ public class PersonApi {
         return personService.get(id);
     }
 
-    /**
-     * 若只需要单个方法放回json数据，则需要在该方法上加@ResponseBody注解
-     */
+    @PostMapping("/add")
+    public void add(Person person) {
+        personService.add(person);
+    }
+
+    @PutMapping("/edit")
+    public void edit(Person person) {
+        personService.edit(person);
+    }
+
+    @DeleteMapping("/remove")
+    public void remove(Integer id) {
+        personService.remove(id);
+    }
+
+//     若只需要单个方法放回json数据，则需要在该方法上加@ResponseBody注解
     /*@RequestMapping("/personList")
     @ResponseBody
     public List<Person> getList() {
