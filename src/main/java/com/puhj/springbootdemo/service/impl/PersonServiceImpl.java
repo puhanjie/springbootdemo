@@ -4,6 +4,7 @@ import com.puhj.springbootdemo.dao.PersonDao;
 import com.puhj.springbootdemo.entity.Person;
 import com.puhj.springbootdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Service("personServiceImpl")
 public class PersonServiceImpl implements PersonService {
 
+    @Qualifier("personDao")
     @Autowired
     private PersonDao personDao;
 

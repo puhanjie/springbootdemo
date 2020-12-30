@@ -4,6 +4,7 @@ import com.puhj.springbootdemo.dao.DeptDao;
 import com.puhj.springbootdemo.entity.Dept;
 import com.puhj.springbootdemo.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Service("deptServiceImpl")
 public class DeptServiceImpl implements DeptService {
 
+    @Qualifier("deptDao")
     @Autowired
     private DeptDao deptDao;
 
